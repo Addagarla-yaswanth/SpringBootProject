@@ -14,20 +14,6 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
-//@Entity
-//@Table(name="transaction")
-//@Data
-//public class Transaction {
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.IDENTITY)
-//	private int id;
-//	private LocalDate date;
-//	private int amount;
-//	@ManyToOne(cascade=CascadeType.PERSIST)
-//	@JoinColumn(name="cust_id",referencedColumnName="custId")
-//	@JsonIgnore
-//	private Customer customer;
-//}
 @Entity
 @Table(name="transaction")
 @Data

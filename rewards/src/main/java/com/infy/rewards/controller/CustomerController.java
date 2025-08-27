@@ -55,7 +55,7 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    // Create a new customer
+     //Create a new customer
     @PostMapping
     public ResponseEntity<CustomerDTO> createCustomer(@RequestBody CustomerDTO customerDTO) {
         CustomerDTO savedCustomer = customerService.createCustomer(customerDTO);

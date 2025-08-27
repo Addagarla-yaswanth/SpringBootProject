@@ -12,17 +12,6 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
-//@Entity
-//@Table(name="customer")
-//@Data
-//public class Customer {
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.IDENTITY)
-//	private int custId;
-//	private String custName;
-//	private String phoneNo;
-//	@OneToMany(cascade=CascadeType.ALL)
-//	private List<Transaction> transaction;
 @Entity
 @Table(name="customer")
 @Data

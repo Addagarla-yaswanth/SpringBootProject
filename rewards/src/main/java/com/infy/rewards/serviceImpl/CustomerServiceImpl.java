@@ -36,7 +36,7 @@ public class CustomerServiceImpl implements CustomerService{
 		Customer customer=mapper.map(customerDTO, Customer.class);
 		customer.setPhoneNo(passwordEncoder.encode(customer.getPhoneNo()));
 		if (customer.getTransaction() != null) {
-		    for (Transaction tx : customer.getTransaction()) {
+			for (Transaction tx : customer.getTransaction()) {
 		        tx.setCustomer(customer); // set back-reference
 		    }
 		}
