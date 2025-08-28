@@ -4,7 +4,6 @@
 
 ##Endpoint
 POST /customer
-## Request Body
 json
 {
   "custName": "Yaswanth",
