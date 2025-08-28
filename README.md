@@ -3,6 +3,33 @@
 A Spring Boot application for managing authentication, customers, and rewards.  
 Includes REST APIs for login, token-based authentication, customer creation (with transactions), and rewards calculation.
 
+📌 Problem Statement
+
+A retail store wants to implement a customer rewards program.
+The reward points are calculated based on customer transactions using the following rules:
+
+For every dollar spent over $100 → 2 points
+
+For every dollar spent between $50–100 → 1 point
+
+Below $50 → 0 points
+
+Examples:
+
+Transaction of $120 → (50 × 1) + (20 × 2) = 90 points
+
+Transaction of $75 → (25 × 1) = 25 points
+
+The system should:
+
+Allow customers to be created with their transactions.
+
+Calculate reward points for the last 3 months.
+
+Calculate reward points for a specific month offset.
+
+Authenticate customers with JWT-based login.
+
 ---
 
 ## 📂 Project Structure
