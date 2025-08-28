@@ -1,9 +1,13 @@
-Rewards Application
+# Rewards Application
 
-A Spring Boot application for managing authentication, customers, and rewards.
+A Spring Boot application for managing authentication, customers, and rewards.  
 Includes REST APIs for login, token-based authentication, customer creation (with transactions), and rewards calculation.
 
-📂 Project Structure
+---
+
+## 📂 Project Structure
+
+```
 rewards
 ├── .mvn/wrapper
 │   └── maven-wrapper.properties
@@ -41,46 +45,58 @@ rewards
 ├── mvnw.cmd
 ├── pom.xml
 └── README.md
+```
 
-⚙️ Requirements
+---
 
-Java 21+
+## ⚙️ Requirements
 
-Maven 3.9+
+- Java **21+**
+- Maven **3.9+**
+- Spring Boot **3.x**
+- MySQL database (configurable in `application.properties`)
 
-Spring Boot 3.x
+---
 
-MySQL database (configurable in application.properties)
-
-🚀 Running the Application
+## 🚀 Running the Application
 
 Clone the repository:
 
+```bash
 git clone <your-repo-url>
 cd rewards
-
+```
 
 Build & run:
 
+```bash
 ./mvnw spring-boot:run
-
+```
 
 The application will be available at:
 
+```
 http://localhost:8080
+```
 
-🔑 API Endpoints
-Authentication (/customer/authenticate)
-Method	Endpoint	Description	Request Body	Response
-POST	/customer/authenticate	Authenticate with custName and phoneNo	```json	
-{				
-"custName": "Yaswanth",				
-"phoneNo": "9345678990"				
-}				
-```	```json			
-{				
-"token": "jwt-token"				
-}				
+---
+
+## 🔑 API Endpoints
+
+### Authentication (`/customer/authenticate`)
+
+| Method | Endpoint | Description | Request Body | Response |
+|--------|----------|-------------|--------------|----------|
+| POST | `/customer/authenticate` | Authenticate with custName and phoneNo | ```json
+{ 
+  "custName": "Yaswanth", 
+  "phoneNo": "9345678990" 
+} 
+``` | ```json
+{ 
+  "token": "jwt-token" 
+} 
+``` |
 
 ---
 
@@ -88,7 +104,7 @@ POST	/customer/authenticate	Authenticate with custName and phoneNo	```json
 
 | Method | Endpoint | Description | Request Body | Response |
 |--------|----------|-------------|--------------|----------|
-| POST   | `/customers` | Create a new customer with transactions | ```json
+| POST | `/customers` | Create a new customer with transactions | ```json
 {
   "custName": "Alice",
   "phoneNo": "9876543210",
@@ -122,8 +138,8 @@ POST	/customer/authenticate	Authenticate with custName and phoneNo	```json
   ]
 }
 ``` |
-| GET    | `/customers/{custId}/rewards` | Get total rewards for the last 3 months | - | `Hello {custName}, your total reward points for last 3 months are {points}.` |
-| GET    | `/customers/{custId}/rewards/{monthOffset}` | Get rewards for a specific month offset (0=current month, 1=last month, etc.) | - | `Hello {custName}, your reward points for month offset {monthOffset} are {points}.` |
+| GET | `/customers/{custId}/rewards` | Get total rewards for the last 3 months | - | `Hello {custName}, your total reward points for last 3 months are {points}.` |
+| GET | `/customers/{custId}/rewards/{monthOffset}` | Get rewards for a specific month offset (0=current month, 1=last month, etc.) | - | `Hello {custName}, your reward points for month offset {monthOffset} are {points}.` |
 
 ---
 
@@ -141,9 +157,14 @@ Run tests with:
 
 ```bash
 ./mvnw test
+```
 
-📸 Screenshots
+---
+
+## 📸 Screenshots
 
 Screenshots of successful test runs are available under:
 
+```
 test-screenshots/
+```
