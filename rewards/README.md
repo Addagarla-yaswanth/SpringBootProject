@@ -81,30 +81,33 @@ http://localhost:8080
 
 ---
 
-## 🔑 API Endpoints
+🔑 API Endpoints
+Authentication (/customer/authenticate)
 
-### Authentication (`/customer/authenticate`)
+POST /customer/authenticate
+Authenticate with custName and phoneNo.
 
-| Method | Endpoint | Description | Request Body | Response |
-|--------|----------|-------------|--------------|----------|
-| POST | `/customer/authenticate` | Authenticate with custName and phoneNo | ```json
-{ 
-  "custName": "Yaswanth", 
-  "phoneNo": "9345678990" 
-} 
-``` | ```json
-{ 
-  "token": "jwt-token" 
-} 
-``` |
+Request Body:
 
----
+{
+  "custName": "Yaswanth",
+  "phoneNo": "9345678990"
+}
 
-### Customers (`/customers`)
 
-| Method | Endpoint | Description | Request Body | Response |
-|--------|----------|-------------|--------------|----------|
-| POST | `/customers` | Create a new customer with transactions | ```json
+Response:
+
+{
+  "token": "jwt-token"
+}
+
+Customers (/customers)
+1. Create a new customer with transactions
+
+POST /customers
+
+Request Body:
+
 {
   "custName": "Alice",
   "phoneNo": "9876543210",
@@ -119,7 +122,10 @@ http://localhost:8080
     }
   ]
 }
-``` | ```json
+
+
+Response:
+
 {
   "custId": 1,
   "custName": "Alice",
@@ -137,9 +143,23 @@ http://localhost:8080
     }
   ]
 }
-``` |
-| GET | `/customers/{custId}/rewards` | Get total rewards for the last 3 months | - | `Hello {custName}, your total reward points for last 3 months are {points}.` |
-| GET | `/customers/{custId}/rewards/{monthOffset}` | Get rewards for a specific month offset (0=current month, 1=last month, etc.) | - | `Hello {custName}, your reward points for month offset {monthOffset} are {points}.` |
+
+2. Get total rewards for the last 3 months
+
+GET /customers/{custId}/rewards
+
+Response:
+
+Hello {custName}, your total reward points for last 3 months are {points}.
+
+3. Get rewards for a specific month offset
+
+GET /customers/{custId}/rewards/{monthOffset}
+Where monthOffset → 0=current month, 1=last month, etc.
+
+Response:
+
+Hello {custName}, your reward points for month offset {monthOffset} are {points}.
 
 ---
 
