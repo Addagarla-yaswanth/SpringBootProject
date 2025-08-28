@@ -155,7 +155,6 @@ Hello {custName}, your total reward points for last 3 months are {points}.
 3. Get rewards for a specific month offset
 
 GET /customers/{custId}/rewards/{monthOffset}
-Where monthOffset → 0=current month, 1=last month, etc.
 
 Response:
 
